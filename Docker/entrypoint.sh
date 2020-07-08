@@ -13,7 +13,7 @@ echo "TX_SMTP_RELAY_USERNAME    -  ${TX_SMTP_RELAY_USERNAME}"
 echo "TX_SMTP_RELAY_PASSWORD    -  (hidden)"
 echo "TX_SMTP_RELAY_NETWORKS    -  ${TX_SMTP_RELAY_NETWORKS}"
 
-if [ -z "${TX_SMTP_RELAY_USERNAME}" ] ; then
+if [ -n "${TX_SMTP_RELAY_USERNAME}" ] ; then
 	# Write SMTP credentials
 	echo "${TX_SMTP_RELAY_HOST} ${TX_SMTP_RELAY_USERNAME}:${TX_SMTP_RELAY_PASSWORD}" > /etc/postfix/sasl_passwd || exit 1
 	postmap /etc/postfix/sasl_passwd || exit 1

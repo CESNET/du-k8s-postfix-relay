@@ -33,8 +33,8 @@ serviceAccount:
 
 # Docker image
 image:
-  repository: eldada-docker-examples.bintray.io/postfix-relay
-  tag: 0.3
+  repository: apps.du.cesnet.cz/postfix-relay
+  tag: 0.4
   pullPolicy: IfNotPresent
 
 # Expose pods with service on port 25
@@ -47,9 +47,9 @@ service:
 smtp:
   # Example with mailgun
   relayHost: "[smtp.mailgun.org]:587"
-  relayMyhostname: my.host.local
-  relayUsername: relayuser
-  relayPassword: relaypassword
+  relayMyhostname: something.local
+  relayUsername:
+  relayPassword:
   relayNetworks: '10.0.0.0/8,127.0.0.0/8,172.17.0.0/16,192.0.0.0/8'
 
 # Resources needed for the pods
