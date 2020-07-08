@@ -10,7 +10,7 @@ metadata:
 data:
   tx-smtp-relay-host: '{{ .Values.smtp.relayHost }}'
   tx-smtp-relay-myhostname: '{{ .Values.smtp.relayMyhostname }}'
+  tx-smtp-relay-networks: '{{ .Values.smtp.relayNetworks }}'
   {{- if .Values.smtp.relayUsername -}}
   tx-smtp-relay-username: '{{ .Values.smtp.relayUsername }}'
   {{- end -}}
-  tx-smtp-relay-networks: '{{ .Values.smtp.relayNetworks }}'
