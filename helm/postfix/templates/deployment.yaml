@@ -40,7 +40,7 @@ spec:
             configMapKeyRef:
               name: {{ template "postfix.fullname" . }}
               key: tx-smtp-relay-networks
-        {{- if .Value.smtp.relayUsername -}}
+        {{- if .Values.smtp.relayUsername -}}
         - name: TX_SMTP_RELAY_USERNAME
           valueFrom:
             configMapKeyRef:
