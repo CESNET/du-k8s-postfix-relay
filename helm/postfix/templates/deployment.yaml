@@ -40,6 +40,7 @@ spec:
             configMapKeyRef:
               name: {{ template "postfix.fullname" . }}
               key: tx-smtp-relay-networks
+        {{- if .Value.smtp.relayUsername -}}
         - name: TX_SMTP_RELAY_USERNAME
           valueFrom:
             configMapKeyRef:
@@ -50,6 +51,7 @@ spec:
             secretKeyRef:
               name: {{ template "postfix.fullname" . }}
               key: tx-smtp-relay-password
+        {{- end -}}
         ports:
           - name: smtp
             containerPort: 25
